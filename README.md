@@ -14,9 +14,11 @@ Note: if you download minified version, also download map to un-minify it when y
 3. package.json start script: node app.js
 4. import packges in app.js
 5. middleware for cors and bodyparser
-6. set static directory to /scripts/
+6. set static directory to /scripts/ & /styles/
 7. set up route for example.html
 8. create server
 
-<b>Create View Template</b>
-1. create controller? 
+<b>Create Angular App</b>
+1. create controller
+2. create module 
+3. create html templates
