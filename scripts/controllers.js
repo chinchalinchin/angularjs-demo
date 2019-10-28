@@ -26,10 +26,16 @@ function BinderController($scope, $document){
 
 function DictionaryController($scope){
     // Fields 
-    $scope.dictionary = [
+    $scope.terms = [
         {name: 'Data Binding', desc: 'A data binding is a way of dynamically updating elements based on changes made \
                                         to the Model through the View'},
         {name: 'Directive', desc: 'A directive is a special type of AngularJS object. It gives HTML classes a new \
                                         functionality over and above vanilla CSS-styling.'}
+    ]
+    $scope.directives = [
+        { name: 'ng-controller', direct: 'Directive for injecting data into HTML'},
+        { name: 'ng-include', direct: 'Directive for embedding HTML within HTML'},
+        { name: 'ng-model', direct: 'Directive for data binding'},
+        { name: 'ng-repeat', direct: 'Directive for iterative binding'},
     ]
 }

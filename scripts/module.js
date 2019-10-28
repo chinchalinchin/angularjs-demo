@@ -13,7 +13,6 @@ exampleApp.controller(controllers)
 exampleApp.controller('BinderController', ['$scope', '$document', BinderController])
 
 // ROUTING CONFIGURATION
-/*
 exampleApp.config(function($routeProvider){
     $routeProvider
         .when('/main',{
@@ -35,7 +34,6 @@ exampleApp.config(function($routeProvider){
             templateUrl: 'example_component/error.html'
         })
         .otherwise({
-            redirectTo:'/error'
+            redirectTo:'/main'
         })
 })
-*/

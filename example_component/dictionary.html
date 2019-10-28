@@ -1,6 +1,12 @@
 <h1>AngularJS Dictionary</h1>
     <div class = 'dictionary-box'>
-        <ul>
-            <li ng-repeat = 'item in dictionary'> <b><u>{{item.name}}</u></b> : {{item.desc}}</li>
+        <span class = "tab"><u><b>Angular Terms</b></u></span>
+        <ul class = "tab">
+            <li ng-repeat = 'item in terms'> <u>{{item.name}}</u> : {{item.desc}}</li>
         </ul>
+        <span class = "tab"><u><b>Angular Directives</b></u></span>
+        <ul class = "tab">
+            <li ng-repeat = 'item in directives'> <u>{{item.name}}</u>: {{item.direct}}</li>
+        </ul>
+
     </div>
