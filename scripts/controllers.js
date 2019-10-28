@@ -8,6 +8,18 @@ function ExampleController($scope){
     
 }
 
+function BinderController($scope, $document){
+    $scope.bindinglist = [
+    ]
+    $scope.pushOnClick = function(event, entry){
+        // only add if enter key is pressed
+        if(event.keyCode === 13){
+            $scope.bindinglist.push(entry);
+            $document[0].querySelector('#binder').value = ""
+        }
+    }
+}
+
 function DictionaryController($scope){
     $scope.dictionary = [
         {name: 'Data Binding', desc: 'A data binding is a way of dynamically updating elements based on changes made to the Model through the View'},

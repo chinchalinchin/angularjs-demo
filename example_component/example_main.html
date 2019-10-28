@@ -65,8 +65,56 @@
                     on the <b>$scope</b> object. Recall the <b>$scope</b> provides a means of communication between the Controller and the View.  
 
                 </p>
-                <b><u>Binding Input:</u></b><input class = "space" type = 'text' ng-model = "name"><br>
-                <b><u>Binding Output:</u></b><span class = "space"> {{name}}</span>
+                
+                <h3>Example 1</h3>
+                <span>Simple Data Binding allows you to directly manipulate the Document-Object-Model</span><br><br>
+                <table>
+                    <tr>
+                        <td>
+                            <b><u>Binding Input:</u></b><br>
+                        </td>
+                        <td>
+                            <b><u>Binding Output:</u></b><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type = 'text' ng-model = "name"><br><br>
+                        </td>
+                        <td>
+                            {{name}}
+                        </td>
+                    </tr>
+                </table>
+
+                <h3>Example 2</h3>
+                <div ng-controller = "BinderController">
+                    <span>Data Binding with <i>ng-click</i> directive allows you to pass changes from the View back to the Model</span><br><br>
+                    <table>
+                        <tr>
+                            <td>
+                                <b><u>Binding Input:</u></b><br>
+                            </td>
+                            <td>
+                                <b><u>Binding Output:</u></b><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id = 'binder' type = 'text' 
+                                        ng-model = "entry" ng-keypress = "pushOnClick($event, entry)"><br>
+                                <input type = "button" value = "add entry to model" 
+                                        ng-click = "bindinglist.push(entry)"><br>
+                            </td>
+                            <td>
+                                <ol>
+                                    <li ng-repeat = "bind in bindinglist"> {{bind}}</li>
+                                </ol>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
             </div><br><br>
     </body>
 

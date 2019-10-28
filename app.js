@@ -13,10 +13,15 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, 'scripts')));
 app.use(express.static(path.join(__dirname, 'styles')));
 
+app.get('/', function(req,res,next){
+    helper.log("Redirecting to /example/", '/');
+    res.redirect('/example');
+})
+
 // Serve up example page
 app.use('/example', function(req, res, next){
     helper.log("Serving 'example.html'", '/example/')
-    res.sendFile(path.join(__dirname,'example_component', 'example.html'));
+    res.sendFile(path.join(__dirname,'example_component', 'example_main.html'));
 });
 
 // Set server to listen
