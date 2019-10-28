@@ -12,6 +12,8 @@ app.use(cors())
 // Set root directory for Express
 app.use(express.static(path.join(__dirname, 'scripts')));
 app.use(express.static(path.join(__dirname, 'styles')));
+app.use(express.static(path.join(__dirname,'example_component')));
+app.use(express.static(path.join(__dirname,'example_component', 'examples')));
 
 app.get('/', function(req,res,next){
     helper.log("Redirecting to /example/", '/');

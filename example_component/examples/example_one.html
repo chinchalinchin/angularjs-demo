@@ -1,0 +1,24 @@
+<h2>1: Dependency Injection</h2>
+    <div class='example-box'> Here is an HTML element containing the <i>ng-controller</i> directive.<br><br>
+        The <i>ng-controller'</i> directive allows you to inject data from Models into the View by accessing the Controller.
+        If you click <i>F12</i> on your keyboard and open the <i>Network tab</i> on the Developer console, you will see a script 
+        <i>example_controller.js</i> being served up to your browser. This script contains the data being injected into the View.
+        Take a look at the <i>Response</i> in the Developer console to see how this accomplished. Notice the name of function
+        in the Response exactly equals the name of this HTML element. This is no coincidence! This is how AngularJS knows
+        to inject the Controller into this element!<br><br>
+
+        <div class = "tab">
+            <i>Technically, it is the <b>$scope</b> passed an argument into the controller that opens a channel through the Controller from the 
+                Model to the View</i>
+        </div><br>
+        We use the Controller data injection inside of another Angular directive, the <i>ng-repeat</i> directive to illustrate
+        the potential use for this type of functionality.
+
+        <table class = "tab">
+            <col width = "200">
+            <tr><td><u><b>This Is For Coding</b></u></td> <td><u><b>This is For Fun</b></u></td></tr>
+            <tr ng-repeat = "ooms in mantra">
+                <td>{{ooms.coding | uppercase }}</td> <td>{{ooms.fun | lowercase}}</td></li>
+            </tr>
+        </table>
+    </div>

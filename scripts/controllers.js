@@ -1,4 +1,7 @@
-function ExampleController($scope){
+// AngularJS Controllers
+
+function DependencyController($scope){
+    // Fields
     $scope.mantra = [
         {coding: "javascript", fun: "beach ball"},
         {coding: "typescript", fun: "skateboard"},
@@ -9,8 +12,9 @@ function ExampleController($scope){
 }
 
 function BinderController($scope, $document){
-    $scope.bindinglist = [
-    ]
+    // Fields
+    $scope.bindinglist = []
+    // Functions
     $scope.pushOnClick = function(event, entry){
         // only add if enter key is pressed
         if(event.keyCode === 13){
@@ -21,8 +25,11 @@ function BinderController($scope, $document){
 }
 
 function DictionaryController($scope){
+    // Fields 
     $scope.dictionary = [
-        {name: 'Data Binding', desc: 'A data binding is a way of dynamically updating elements based on changes made to the Model through the View'},
-        {name: 'Directive', desc: 'A directive is a special type of AngularJS object. It gives HTML classes a new functionality over and above vanilla CSS-styling.'}
+        {name: 'Data Binding', desc: 'A data binding is a way of dynamically updating elements based on changes made \
+                                        to the Model through the View'},
+        {name: 'Directive', desc: 'A directive is a special type of AngularJS object. It gives HTML classes a new \
+                                        functionality over and above vanilla CSS-styling.'}
     ]
 }
