@@ -1,4 +1,7 @@
 <a href="www.angularjs.org">Download AngularJs</a>
+Note: if you download minified version, also download map to un-minify it when you serve it.
+	map: https://code.angularjs.org/1.2.12/
+
 
 <b>Set Up Reposistory</b>
 1. git init

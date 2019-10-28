@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html ng-app = "exampleApp">
+
     <head>
         <title>AngularJS Example</title> 
         <script src = '/angular.min.js'></script>
@@ -8,11 +9,16 @@
         <script>
              var exampleApp = angular.module('exampleApp', []);
             exampleApp.controller('ExampleController', ExampleController)
-            </script>
+        </script>
+
         <link rel="stylesheet" type="text/css" href="/example_styles.css">
     </head>
+
     <body>
+
         <h1><u>AngularJS Demo</u><br></h1>
+
+        <!--Introduction-->
         <p>AngularJS uses the 
             <a href = "https://www.tutorialspoint.com/angularjs/angularjs_mvc_architecture.htm">Model-View-Control Architecture</a> 
             to implement its design and functionality. In AngularJS, a HTML template provides a <i>View</i> of a data <i>Model</i>. 
@@ -21,37 +27,42 @@
                 <i>In other words, <b>Views</b> "plug" into <b>Controllers</b> so they can access and present the <b>Models</b> to the user.</i>
             </div>
 
+        <!--Dictionary-->
         <h1>AngularJS Dictionary</h1>
         <ul>
             <li><a href = "">Directive</a></li>
         </ul>
 
+        <!--Functionality-->
         <h1>AngularJS Functionality</h1>
-        <h2>1: Data Binding</h2>
-        <div>
+            <!--Data Binding-->
+            <h2>1: Data Binding</h2>
+            <div>
+            </div><br><br>
 
-        </div><br><br>
+            <!--Dependency Injection-->
+            <h2>2: Dependency Injection</h2>
+            <div ng-controller="ExampleController" class='example-box'> Here is an HTML element containing the <i>ng-controller</i> directive.<br><br>
+                A <i>directive</i> is a special type of AngularJS object. It gives HTML classes a new functionality over and above vanilla
+                CSS-styling. The <i>ng-controller'</i> directive allows you to inject data from Models into the View by accessing the Controller.
+                If you click <i>F12</i> on your keyboard and open the <i>Network tab</i> on the Developer console, you will see a script 
+                <i>example_controller.js</i> being served up to your browser. This script contains the data being injected into the View.
+                Take a look at the <i>Response</i> in the Developer console to see how this accomplished. Notice the name of function
+                in the Response exactly equals the name of this HTML element. This is no coincidence! This is how AngularJS knows
+                to inject the Controller into this element!<br><br>
 
-        <h2>2: Dependency Injection</h2>
-        <div ng-controller="ExampleController" class='example-box'> Here is an HTML element containing the <i>ng-controller</i> directive.<br><br>
-            A <i>directive</i> is a special type of AngularJS object. It gives HTML classes a new functionality over and above vanilla
-            CSS-styling. The <i>ng-controller'</i> directive allows you to inject data from Models into the View by accessing the Controller.
-            If you click <i>F12</i> on your keyboard and open the <i>Network tab</i> on the Developer console, you will see a script 
-            <i>example_controller.js</i> being served up to your browser. This script contains the data being injected into the View.
-            Take a look at the <i>Response</i> in the Developer console to see how this accomplished. Notice the name of function
-            in the Response exactly equals the name of this HTML element. This is no coincidence! This is how AngularJS knows
-            to inject the Controller into this element!<br><br>
+                <div class = "tab">
+                    <i>Technically, it is the <b>$scope</b> passed an argument into the controller that opens a channel through the Controller from the 
+                        Model to the View</i>
+                </div><br>
+                We use the Controller data injection inside of another Angular directive, the <i>ng-repeat</i> directive to illustrate
+                the potential use for this type of functionality.
 
-            <div class = "tab">
-                <i>Technically, it is the <b>$scope</b> passed an argument into the controller that opens a channel through the Controller from the 
-                    Model to the View</i>
-            </div><br>
-            We use the Controller data injection inside of another Angular directive, the <i>ng-repeat</i> directive to illustrate
-            the potential use for this type of functionality.
+                <ul>
+                    <li ng-repeat = "ooms in mantra">{{ooms.coding}} - {{ooms.fun}}</li>
+                </ul>
+            </div>
 
-            <ul>
-                <li ng-repeat = "ooms in mantra">{{ooms.coding}} - {{ooms.fun}}</li>
-            </ul>
-        </div>
     </body>
+
 </html>
