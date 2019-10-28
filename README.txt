@@ -1,0 +1,24 @@
+<a href="www.angularjs.org">Download AngularJs</a><br>
+<u>Note:</u> if you download minified version, also download map to un-minify it when you serve it.<br>
+	<b class = "margin-right: 20px;"> map: https://code.angularjs.org/1.2.12/</b>
+
+
+<b>Set Up Reposistory</b>
+1. git init
+2. cp SOURCE/angular.min.js DEST/angular.min.js
+3. gitignore node_modules 
+
+<b>Initialize Project</b>
+1. npm init
+2. npm install express cors
+3. package.json start script: node app.js
+4. import packges in app.js
+5. middleware for cors and bodyparser
+6. set static directory to /scripts/ & /styles/
+7. set up route for example.html
+8. create server
+
+<b>Create Angular App</b>
+1. create controller
+2. create module 
+3. create html templates
