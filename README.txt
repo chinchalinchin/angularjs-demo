@@ -16,4 +16,4 @@
 8. create server
 
 <b>Create View Template</b>
-1. 
+1. create controller? 

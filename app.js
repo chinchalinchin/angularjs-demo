@@ -11,6 +11,7 @@ app.use(cors())
 
 // Set root directory for Express
 app.use(express.static(path.join(__dirname, 'scripts')));
+app.use(express.static(path.join(__dirname, 'styles')));
 
 // Serve up example page
 app.use('/example', function(req, res, next){
