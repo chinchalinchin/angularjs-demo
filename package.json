@@ -1,0 +1,21 @@
+{
+  "name": "angularjs_example",
+  "version": "1.0.0",
+  "description": "a simple node express server for an angularjs example",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angularjs",
+    "node",
+    "express"
+  ],
+  "author": "Grant Moore",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
