@@ -4,12 +4,8 @@
     <head>
         <title>AngularJS Example</title> 
         <script src = '/angular.min.js'></script>
-        <script src = '/example_controller.js'>
-        </script>
-        <script>
-             var exampleApp = angular.module('exampleApp', []);
-            exampleApp.controller('ExampleController', ExampleController)
-        </script>
+        <script src = '/controllers.js'></script>
+        <script src = '/module.js'></script>
 
         <link rel="stylesheet" type="text/css" href="/example_styles.css">
     </head>
@@ -29,22 +25,19 @@
 
         <!--Dictionary-->
         <h1>AngularJS Dictionary</h1>
-        <ul>
-            <li><a href = "">Directive</a></li>
-        </ul>
+        <div ng-controller="DictionaryController" class = 'dictionary-box'>
+            <ul>
+                <li ng-repeat = 'item in dictionary'> <b><u>{{item.name}}</u></b> : {{item.desc}}</li>
+            </ul>
+        </div>
 
         <!--Functionality-->
         <h1>AngularJS Functionality</h1>
-            <!--Data Binding-->
-            <h2>1: Data Binding</h2>
-            <div>
-            </div><br><br>
 
             <!--Dependency Injection-->
-            <h2>2: Dependency Injection</h2>
+            <h2>1: Dependency Injection</h2>
             <div ng-controller="ExampleController" class='example-box'> Here is an HTML element containing the <i>ng-controller</i> directive.<br><br>
-                A <i>directive</i> is a special type of AngularJS object. It gives HTML classes a new functionality over and above vanilla
-                CSS-styling. The <i>ng-controller'</i> directive allows you to inject data from Models into the View by accessing the Controller.
+                The <i>ng-controller'</i> directive allows you to inject data from Models into the View by accessing the Controller.
                 If you click <i>F12</i> on your keyboard and open the <i>Network tab</i> on the Developer console, you will see a script 
                 <i>example_controller.js</i> being served up to your browser. This script contains the data being injected into the View.
                 Take a look at the <i>Response</i> in the Developer console to see how this accomplished. Notice the name of function
@@ -63,6 +56,18 @@
                 </ul>
             </div>
 
+            <!--Data Binding-->
+            <h2>2: Data Binding</h2>
+            <div class ='example-box'>
+                <p>
+                    The <i>ng-model</i> directive provides a method of <i>data-binding</i>. A data-binding in Angular is a special type of 
+                    dependency-injection. Underneath the hood, the <i>ng-model</i> uses a special type of Controller to create a new data object
+                    on the <b>$scope</b> object. Recall the <b>$scope</b> provides a means of communication between the Controller and the View.  
+
+                </p>
+                <b><u>Binding Input:</u></b><input class = "space" type = 'text' ng-model = "name"><br>
+                <b><u>Binding Output:</u></b><span class = "space"> {{name}}</span>
+            </div><br><br>
     </body>
 
 </html>
