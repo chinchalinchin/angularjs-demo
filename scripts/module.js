@@ -13,6 +13,7 @@ exampleApp.controller(controllers)
 exampleApp.controller('BinderController', ['$scope', '$document', BinderController])
 
 // ROUTING CONFIGURATION
+/* Need to understand more about routing
 exampleApp.config(function($routeProvider){
     $routeProvider
         .when('/main',{
@@ -37,3 +38,4 @@ exampleApp.config(function($routeProvider){
             redirectTo:'/main'
         })
 })
+*/
