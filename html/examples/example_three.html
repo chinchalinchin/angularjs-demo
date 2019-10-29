@@ -1,0 +1,18 @@
+<h2>3: Class Binding</h2>
+    <div class = "example-box">
+        <p class = 'tab'>
+            The <i>ng-class</i> directive allows you dynamically apply CSS styling to an HTML element by binding the value of a 
+            CSS style directly to an object within the <b>$scope</b> of the <i>ng-model</i> controller.
+        </p>
+
+        <h3>Example</h3>
+        <div class = 'tab'>
+            Selection: {{color}}<br>
+            <select ng-init = 'color = "white"' ng-model ="color" ng-class = 'color'>
+                <option value = "white" selected>White</option>
+                <option value = "red">Red</option>
+                <option value = "blue">Blue</option>
+                <option value = "green">Green</option>
+            </select>
+        </div><br><br>
+    </div>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app = "exampleApp">
+
+    <head>
+        <title>AngularJS Example</title> 
+        <script src = '/angular.min.js'></script>
+        <script src = '/controllers.js'></script>
+        <script src = '/module.js'></script>
+        <link rel="stylesheet" type="text/css" href="/example_styles.css">
+    </head>
+
+    <body>
+        <!--Introduction-->
+        <div ng-include src = "'intro.html'"></div>
+
+        <!--Dictionary-->
+        <div ng-include ng-controller = 'DictionaryController' src="'dictionary.html'"></div>
+
+        <!--Functionality-->
+        <h1>AngularJS Examples</h1>
+            <!--Dependency Injection-->
+        <div ng-include ng-controller = 'DependencyController' src = "'example_one.html'"></div>
+            <!--Data Binding-->
+        <div ng-include ng-controller = 'BinderController' src = "'example_two.html'"></div>
+            <!--Class Binding-->
+        <div ng-include src = "'example_three.html'">
+    </body>
+
+</html>

@@ -2,7 +2,7 @@
 <div class ='example-box'>
     <p class = 'tab'>
         The <i>ng-model</i> directive provides a method of <i>data-binding</i>. A data-binding in Angular is a type of 
-        dependency-injection. Underneath the hood, the <i>ng-model</i> uses a specialized type of Controller scoped to the 
+        dependency-injection. Underneath the hood, the <i>ng-model</i> uses a specialized type of Controller bound to the
         <i>ng-model</i>element to create a new data object on the <b>$scope</b> object. Recall the <b>$scope</b> provides a 
         means of communication between the Model and the View.  
 
@@ -10,7 +10,11 @@
     
     <h3>Example 1</h3>
     <div class = 'tab'>
-        <span class = 'tab'>Simple Data Binding allows you to directly manipulate the Document-Object-Model</span><br><br>
+        <div class = 'tab'>
+            Simple Data Binding allows you to directly manipulate the Document-Object-Model. In this example,
+            you can dynamically alter the table element in the column next to the input box by typing into it. Your input will
+            change the DOM.
+        </div><br><br>
         <table>
             <tr>
                 <td><b><u>Binding Input:</u></b><br></td>
@@ -25,8 +29,12 @@
 
     <h3>Example 2</h3>
     <div class = 'tab'>
-        <span class = 'tab'>Data Binding with <i>ng-click</i> directive allows you to pass changes from the View back 
-            to the Model</span><br><br>
+        <div class = 'tab'>
+            Using the <i>ng-click</i> and <i>ng-repeat</i> directive, we can make our DOM manipulation even more sophiscated by 
+            binding an HTML input element to an AngularJS <u>function</u> within the <b>$scope</b> of the <i>ng-model</i> Controller 
+            that operates on object array within the <b>$scope</b>. Then in turn we can bind that <i>ng-model</i> <b>$scope</b> array 
+            to an <i>ng-repeat</i> element.
+        </div><br><br>
         <table>
             <tr>
                 <td> <b><u>Binding Input:</u></b><br></td>
@@ -36,12 +44,12 @@
                 <td>
                     <input id = 'binder' type = 'text' 
                             ng-model = "entry" ng-keypress = "pushOnEnter($event, entry)"><br>
-                    <input type = "button" value = "add entry to model" 
+                    <input type = "button" value = "Add To $Scope" 
                             ng-click = "push(entry)"><br>
                 </td>
                 <td><ol><li ng-repeat = "bind in bindinglist"> {{bind}}</li></ol></td>
             </tr>
         </table>
     </div>
-
-</div><br><br>
+    
+</div>

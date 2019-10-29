@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path');
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const helper = require('./scripts/helper.js')
+const helper = require('./scripts/utilities/helper.js')
 const app = express()
 
 // Insert middleware
@@ -11,9 +11,10 @@ app.use(cors())
 
 // Set root directory for Express
 app.use(express.static(path.join(__dirname, 'scripts')));
+app.use(express.static(path.join(__dirname, 'scripts', 'angularjs')));
 app.use(express.static(path.join(__dirname, 'styles')));
-app.use(express.static(path.join(__dirname,'example_component')));
-app.use(express.static(path.join(__dirname,'example_component', 'examples')));
+app.use(express.static(path.join(__dirname, 'html')));
+app.use(express.static(path.join(__dirname, 'html', 'examples')));
 
 app.get('/', function(req,res,next){
     helper.log("Redirecting to /example/", '/');
@@ -23,7 +24,7 @@ app.get('/', function(req,res,next){
 // Serve up example page
 app.use('/example', function(req, res, next){
     helper.log("Serving 'example.html'", '/example/')
-    res.sendFile(path.join(__dirname,'example_component', 'example_main.html'));
+    res.sendFile(path.join(__dirname,'html', 'main.html'));
 });
 
 // Set server to listen

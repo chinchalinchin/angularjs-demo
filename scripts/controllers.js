@@ -18,6 +18,7 @@ function BinderController($scope, $document){
     $scope.push = function(entry){
         $scope.bindinglist.push(entry);
         $document[0].querySelector('#binder').value = ""
+        $document[0].querySelector('#binder').focus()
     }
     $scope.pushOnEnter = function(event, entry){
         // event.keyCode === 13 : ENTER
@@ -36,21 +37,24 @@ function DictionaryController($scope){
                                         functionality over and above vanilla CSS-styling. Directives are enabled\
                                         by AngularJS\'s under-the-hood jQuery and DOM manipulation that allow functionality\
                                         to be tied to css-selectors in html elements'},
-        {name: 'Scope', desc: 'Scope is the level of HTML Elements within a Controller\'s  domain. When a controller\
-                                is bound to an HTML element, the scope within that controller does not interact with\
-                                the scope of controllers bound to other HTML elements. \n \n Point of research: What if\
-                                a controller is bound to an element that is within the scope of another controller? Are\
-                                the scopes hiearchical or isolated? '}
+        {name: 'Scope', desc: 'Scope is the level of access the View has to the Model. When a Controller is bound to\
+                                an HTML element, the scope ($scope) is injected into that Controller, which allows the View to\
+                                alter and interact with the Model.'}
     ]
     $scope.directives = [
-        { name: 'ng-click', direct: ""},
-        { name: 'ng-controller', direct: 'ng-controller allows an element in View to modify the Model. This directive scopes\
-                                            a controller within an HTML element. '},
-        { name: 'ng-include', direct: 'ng-include binds a single element to a larger HTML source file. The src attribute\
-                                        is set to location the desired HTML page.'},
-        { name: 'ng-model', direct: 'ng-model binds the value of an input element to the scope of a controller. Note, ng-model\
-                                        implicitly has a controller tied to it.'},
-        { name: 'ng-repeat', direct: 'ng-repeat allows an element to binded to an iterable object within the scope of the\
-                                        controller'},
+        { name: 'ng-app', direct: "'ng-app' tells AngularJS to compile all child HTML elements within this element\
+                                    into an AngularJS app. This is always necessary."},
+        { name: 'ng-click', direct: "'ng-click' genereates an event whenever the user clicks a key within this element\
+                                        which can be hooked in the scope of the Controller the element is embeded in,\
+                                        or used just like the HTML 'onclick' attribute"},
+        { name: 'ng-controller', direct: "ng-controller' allows an element in View to modify the Model. This directive scopes\
+                                            a controller within an HTML element. "},
+        { name: 'ng-include', direct: "'ng-include' binds a single element to a larger HTML source file. The src attribute\
+                                        is set to location the desired HTML page."},
+        { name: 'ng-init', direct: "'ng-init' initializes values within the same scope? Still researching this."},
+        { name: 'ng-model', direct: "'ng-model binds the value of an input element to the scope of a controller. Note, ng-model\
+                                        implicitly has a controller tied to it."},
+        { name: 'ng-repeat', direct: "'ng-repeat' allows an element to binded to an iterable object within the scope of the\
+                                        controller"},
     ]
 }

@@ -8,16 +8,17 @@
             in the Response exactly equals the name of this HTML element. This is no coincidence! This is how AngularJS knows
             to bind the Controller into this element!<br><br>
 
-            <div class = "tab">
-                <i>Technically, it is the <b>$scope</b> passed an argument into the controller that opens a channel through the Controller from 
-                    the Model to the View</i>
+            <div class = "note">
+                Technically, it is the <b>$scope</b> passed as an argument into the Controller that opens a channel through the
+                    Controller from the Model to the View. This is what is meant by <i>dependency injection</i>. AngularJS injects
+                    the <b>$scope</b> into the Controller, which in turns gives access to the View.
             </div><br>
-            We use the Controller data injection inside of another Angular directive, the <i>ng-repeat</i> directive to illustrate
-            the potential use for this type of functionality.
         </div>
 
         <h3>Example</h3>
         <div class = 'tab'>
+            With the data injected into the View through the Controller, we can use the <i>ng-repeat</i> directive to call 
+            objects that been added onto the <b>$scope</b>.<br><br>
             <table class = "tab">
                     <col width = "200">
                     <tr><td><u><b>This Is For Coding</b></u></td> <td><u><b>This is For Fun</b></u></td></tr>
